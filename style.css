@@ -303,3 +303,22 @@ input, textarea {
         font-size: 0.9rem;
     }
 }
+
+.project-grid {
+    gap: 2rem 1.5rem; 
+}
+
+.project-card[style*="margin-top"] {
+    margin-top: 0 !important;
+    height: 100%; 
+    min-height: 380px; 
+}
+
+.project-disclaimer {
+    margin-top: 20px; 
+    padding: 0.8rem;
+    background: rgba(100, 255, 218, 0.05);
+    border: 1px solid rgba(100, 255, 218, 0.1);
+    border-radius: 6px;
+    font-size: 0.75rem;
+}
