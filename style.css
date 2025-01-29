@@ -179,3 +179,127 @@ input, textarea {
     bottom: 2rem;
     width: calc(100% - 4rem);
 }
+
+/* Add these new styles */
+.project-header {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+}
+
+.project-header i {
+    font-size: 1.8rem;
+    color: var(--primary);
+}
+
+.tech-stack {
+    display: flex;
+    gap: 0.5rem;
+    flex-wrap: wrap;
+    margin: 1rem 0;
+}
+
+.tech-stack span {
+    background: rgba(100, 255, 218, 0.1);
+    color: var(--primary);
+    padding: 0.3rem 0.8rem;
+    border-radius: 20px;
+    font-size: 0.9rem;
+}
+
+.project-links {
+    display: flex;
+    gap: 1rem;
+    margin-top: 1.5rem;
+}
+
+.project-links .link {
+    color: var(--primary);
+    text-decoration: none;
+    padding: 0.5rem 1.2rem;
+    border: 2px solid var(--primary);
+    border-radius: 4px;
+    transition: all 0.3s;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.project-links .link:hover {
+    background: var(--primary);
+    color: var(--background);
+}
+
+.project-links .link i {
+    font-size: 0.9rem;
+}
+
+/* Form Validation Styles */
+.validation-error {
+    color: #ff4444;
+    font-size: 0.9rem;
+    margin-top: 0.3rem;
+    display: none;
+}
+
+.form-messages {
+    display: none;
+    padding: 1rem;
+    border-radius: 4px;
+    margin-top: 1.5rem;
+}
+
+.form-messages.success {
+    background: rgba(100, 255, 218, 0.1);
+    border: 2px solid var(--primary);
+    color: var(--primary);
+}
+
+.form-messages.error {
+    background: rgba(255, 68, 68, 0.1);
+    border: 2px solid #ff4444;
+    color: #ff4444;
+}
+
+/* Fixed Email Box */
+.fixed-email-box {
+    position: fixed;
+    bottom: 30px;
+    left: 30px;
+    background: var(--secondary);
+    padding: 1rem 1.5rem;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    border: 1px solid rgba(100, 255, 218, 0.3);
+    z-index: 500;
+    backdrop-filter: blur(10px);
+    animation: slideInLeft 0.5s ease-out;
+}
+
+.fixed-email-box i {
+    color: var(--primary);
+}
+
+@keyframes slideInLeft {
+    from {
+        transform: translateX(-100%);
+        opacity: 0;
+    }
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+/* Mobile Email Box */
+@media (max-width: 768px) {
+    .fixed-email-box {
+        bottom: 15px;
+        left: 15px;
+        padding: 0.8rem 1.2rem;
+        font-size: 0.9rem;
+    }
+}
