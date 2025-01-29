@@ -1,0 +1,181 @@
+:root {
+    --primary: #64ffda;
+    --secondary: #1a1a1a;
+    --background: #0a192f;
+    --text: #ccd6f6;
+    --nav-width: 280px;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Space Grotesk', sans-serif;
+}
+
+body {
+    background-color: var(--background);
+    color: var(--text);
+    line-height: 1.6;
+}
+
+.side-nav {
+    height: 100%;
+    width: var(--nav-width);
+    position: fixed;
+    top: 0;
+    left: -280px;
+    background-color: var(--secondary);
+    padding: 2rem;
+    transition: 0.3s;
+    z-index: 1000;
+    border-right: 2px solid var(--primary);
+}
+
+.side-nav.active {
+    left: 0;
+}
+
+.logo {
+    font-size: 2.5rem;
+    color: var(--primary);
+    display: block;
+    margin-bottom: 3rem;
+    text-decoration: none;
+    font-family: monospace;
+}
+
+.nav-links {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.nav-links a {
+    color: var(--text);
+    text-decoration: none;
+    font-size: 1.1rem;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    transition: color 0.3s;
+}
+
+.nav-links a:hover {
+    color: var(--primary);
+}
+
+.main-content {
+    margin-left: 0;
+    transition: 0.3s;
+    padding: 2rem;
+}
+
+.open-btn {
+    position: fixed;
+    top: 1rem;
+    left: 1rem;
+    font-size: 1.5rem;
+    background: none;
+    border: none;
+    color: var(--primary);
+    cursor: pointer;
+    z-index: 500;
+}
+
+.projects {
+    padding: 4rem 0;
+}
+
+.project-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin-top: 3rem;
+}
+
+.project-card {
+    background-color: var(--secondary);
+    padding: 2rem;
+    border-radius: 8px;
+    border: 1px solid rgba(100, 255, 218, 0.1);
+    transition: transform 0.3s;
+}
+
+.project-card:hover {
+    transform: translateY(-5px);
+}
+
+.contact-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem;
+    margin-top: 3rem;
+}
+
+.email-box {
+    background: var(--secondary);
+    padding: 1.5rem;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 2rem;
+}
+
+.social-links {
+    display: flex;
+    gap: 1.5rem;
+}
+
+.social-icon {
+    font-size: 1.5rem;
+    color: var(--text);
+    transition: color 0.3s;
+}
+
+.social-icon:hover {
+    color: var(--primary);
+}
+
+.form-group {
+    margin-bottom: 1.5rem;
+}
+
+input, textarea {
+    width: 100%;
+    padding: 1rem;
+    background: var(--secondary);
+    border: 1px solid rgba(100, 255, 218, 0.1);
+    color: var(--text);
+    border-radius: 4px;
+}
+
+.centered {
+    text-align: center;
+    margin: 2rem 0;
+}
+
+.code-snippet {
+    background: var(--secondary);
+    padding: 1.5rem;
+    border-radius: 8px;
+    margin: 2rem 0;
+    border: 1px solid var(--primary);
+    font-family: monospace;
+}
+
+.close-btn {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    font-size: 2rem;
+    color: var(--text);
+    cursor: pointer;
+}
+
+.nav-footer {
+    position: absolute;
+    bottom: 2rem;
+    width: calc(100% - 4rem);
+}
