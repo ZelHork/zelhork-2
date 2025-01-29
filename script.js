@@ -55,3 +55,67 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 });
+
+// Email validation function
+function isValidEmail(email) {
+    const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    return re.test(String(email).toLowerCase());
+}
+
+// Form submission handler
+document.getElementById('contactForm').addEventListener('submit', function(e) {
+    e.preventDefault();
+    
+    const emailInput = document.getElementById('emailInput');
+    const emailError = document.getElementById('emailError');
+    const formMessages = document.getElementById('formMessages');
+    
+    // Reset messages
+    emailError.style.display = 'none';
+    formMessages.style.display = 'none';
+
+    // Validate email format
+    if (!isValidEmail(emailInput.value)) {
+        emailError.textContent = 'Please enter a valid email address';
+        emailError.style.display = 'block';
+        return;
+    }
+
+    // Submit form using Formspree
+    const formData = new FormData(this);
+    
+    fetch(this.action, {
+        method: 'POST',
+        body: formData,
+        headers: {
+            'Accept': 'application/json'
+        }
+    })
+    .then(response => {
+        if (response.ok) {
+            formMessages.textContent = 'Message sent successfully! 🚀';
+            formMessages.className = 'form-messages success';
+            this.reset();
+        } else {
+            formMessages.textContent = 'Oops! There was a problem. Please try again.';
+            formMessages.className = 'form-messages error';
+        }
+        formMessages.style.display = 'block';
+    })
+    .catch(error => {
+        formMessages.textContent = 'Oops! There was a network error.';
+        formMessages.className = 'form-messages error';
+        formMessages.style.display = 'block';
+    });
+});
+
+// Real-time email validation
+document.getElementById('emailInput').addEventListener('input', function() {
+    const emailError = document.getElementById('emailError');
+    if (!isValidEmail(this.value)) {
+        emailError.textContent = 'Please enter a valid email address';
+        emailError.style.display = 'block';
+    } else {
+        emailError.style.display = 'none';
+    }
+});
