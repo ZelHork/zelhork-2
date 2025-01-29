@@ -26,14 +26,16 @@
     <div class="main-content" id="mainContent">
         <button class="open-btn" id="openBtn">&#9776;</button>
 
+        <!-- Fixed Email Box -->
+        <div class="fixed-email-box">
+            <i class="fas fa-envelope"></i>
+            <p>zelhork@gmail.com</p>
+        </div>
+
         <section class="contact container">
             <h2 class="section-title centered">Let's Connect</h2>
             <div class="contact-content">
                 <div class="contact-info reveal">
-                    <div class="email-box">
-                        <i class="fas fa-envelope"></i>
-                        <p>zelhork@gmail.com</p>
-                    </div>
                     <div class="social-links">
                         <a href="#" class="social-icon"><i class="fab fa-github"></i></a>
                         <a href="#" class="social-icon"><i class="fab fa-codepen"></i></a>
@@ -41,18 +43,21 @@
                     </div>
                 </div>
                 
-                <form class="contact-form reveal">
+                <form id="contactForm" class="contact-form reveal" action="https://formspree.io/f/xqaeqvjg" method="POST">
                     <div class="form-group">
-                        <input type="text" placeholder="Name" required>
+                        <input type="text" name="name" placeholder="Name" required>
                     </div>
                     <div class="form-group">
-                        <input type="email" placeholder="Email" required>
+                        <input type="email" name="_replyto" id="emailInput" placeholder="Email" required>
+                        <span class="validation-error" id="emailError"></span>
                     </div>
                     <div class="form-group">
-                        <textarea placeholder="Your Message" rows="5" required></textarea>
+                        <textarea name="message" placeholder="Your Message" rows="5" required></textarea>
                     </div>
-                    <button class="btn">Send Message <i class="fas fa-paper-plane"></i></button>
+                    <button type="submit" class="btn">Send Message <i class="fas fa-paper-plane"></i></button>
                 </form>
+                
+                <div id="formMessages" class="form-messages"></div>
             </div>
         </section>
     </div>
