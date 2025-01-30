@@ -365,3 +365,14 @@ input, textarea {
         font-size: 0.9rem;
     }
 }
+
+.project-card {
+    width: 100%; 
+    max-width: 440px;
+    height: auto; 
+    min-height: 270px; 
+    padding: 2;
+    margin-top: 4px;
+    border-radius: 10px; 
+}
+
